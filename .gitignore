@@ -1,0 +1,7 @@
+.env
+venv/
+conversations.db
+ingestion/hash_store.json
+ingestion/bm25_state.json
+__pycache__/
+*.pyc
