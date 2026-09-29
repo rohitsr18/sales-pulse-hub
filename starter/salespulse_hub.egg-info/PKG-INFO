@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: salespulse-hub
+Version: 1.0.0
+Summary: SalesPulse Hub — seven agents, live dashboard, submission writer
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.111.0
+Requires-Dist: uvicorn[standard]>=0.30.0
+Requires-Dist: sse-starlette>=1.8.2
+Requires-Dist: httpx>=0.27.0
+Requires-Dist: openai>=1.30.0
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: pydantic>=2.7.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.2.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.23.6; extra == "dev"
+Requires-Dist: respx>=0.21.1; extra == "dev"
+Requires-Dist: ruff>=0.4.9; extra == "dev"
+Requires-Dist: mypy>=1.10.0; extra == "dev"
+Requires-Dist: black>=24.4.2; extra == "dev"
+Requires-Dist: pytest-cov>=5.0.0; extra == "dev"

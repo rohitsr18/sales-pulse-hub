@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Lint & Format (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install quality tools
+        run: pip install ruff black mypy
+
+      - name: Lint (ruff)
+        run: ruff check sim/ starter/
+
+      - name: Format check (black)
+        run: black --check sim/ starter/
+
+      - name: Type check (mypy)
+        run: |
+          pip install -e "sim/[dev]"
+          pip install -e "starter/[dev]"
+          mypy sim/sim starter/hub
+
+  test:
+    name: Unit Tests (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    needs: quality
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python ${{ matrix.python }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: 'pip'
+
+      - name: Install sim dependencies
+        run: pip install -e "sim/[dev]"
+
+      - name: Install starter dependencies
+        run: pip install -e "starter/[dev]"
+
+      - name: Run sim tests with coverage
+        run: cd sim && pytest --cov=sim --cov-report=xml -q
+
+      - name: Run starter tests with coverage
+        run: cd starter && pytest --cov=hub --cov-report=xml -q
+
+      - name: Upload coverage
+        if: matrix.python == '3.11'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: '**/.coverage'
+          retention-days: 7
+
+  security:
+    name: Dependency Audit (pip-audit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install pip-audit
+      - name: Audit sim dependencies
+        run: pip-audit -r sim/requirements.txt
+      - name: Audit starter dependencies
+        run: pip-audit -r starter/requirements.txt
+
+  docker-build:
+    name: Docker Build Smoke Test
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build sim image
+        run: docker build -t salespulse-sim:ci ./sim
+      - name: Build starter image
+        run: docker build -t salespulse-hub:ci ./starter

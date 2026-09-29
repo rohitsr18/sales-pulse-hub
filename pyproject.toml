@@ -1,0 +1,43 @@
+# Root-level tool configuration shared by both sim and starter packages.
+# Each package also has its own pyproject.toml for dependencies.
+
+[tool.ruff]
+target-version = "py311"
+line-length    = 100
+
+[tool.ruff.lint]
+select = [
+  "E", "F", "W",   # pycodestyle / pyflakes
+  "I",              # isort
+  "N",              # pep8-naming
+  "UP",             # pyupgrade
+  "S",              # bandit (security)
+  "B",              # bugbear
+  "A",              # builtins shadowing
+  "C4",             # comprehensions
+  "T20",            # no print()
+  "RUF",            # ruff-specific
+]
+ignore = [
+  "S101",  # assert allowed in tests
+  "S104",  # binding 0.0.0.0 intentional in Docker
+  "T201",  # allow print in scripts / logger only
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*"        = ["S101", "S106"]
+"sim/server.py"  = ["T201"]
+
+[tool.mypy]
+python_version       = "3.11"
+strict               = true
+ignore_missing_imports = true
+warn_return_any      = false
+
+[tool.black]
+line-length    = 100
+target-version = ["py311"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths    = ["tests"]

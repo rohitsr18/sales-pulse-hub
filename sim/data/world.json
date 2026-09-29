@@ -1,0 +1,211 @@
+{
+  "accounts": [
+    { "accountId": "NL-0847", "name": "Erasmus MC Rotterdam",            "country": "NL", "type": "academic_medical_center", "beds": 1300, "territory": "EMEA-BENELUX", "repId": "R-22", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-1.5T",   "serial": "INS-2019-7234", "installedDate": "2019-03-15", "contractEnd": "2024-03-15" },
+        { "productId": "EPIQ-ELITE", "serial": "EPI-2021-8891", "installedDate": "2021-06-01", "contractEnd": "2026-06-01" }
+      ],
+      "opportunities": [
+        { "oppId": "OPP-1001", "title": "Ingenia 3T MRI + Neurovascular Coil Package", "value": 2400000, "currency": "EUR", "stage": "proposal", "probability": 0.55, "products": ["ING-3T", "COIL-NV"], "createdAt": "2025-11-14T09:00:00Z" }
+      ]
+    },
+    { "accountId": "NL-0848", "name": "Amsterdam UMC",                   "country": "NL", "type": "academic_medical_center", "beds": 1000, "territory": "EMEA-BENELUX", "repId": "R-22", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-1.5T", "serial": "INS-2018-4421", "installedDate": "2018-06-01", "contractEnd": "2023-06-01" }
+      ],
+      "opportunities": [
+        { "oppId": "OPP-1002", "title": "MRI Fleet Refresh — 2x 1.5T", "value": 1700000, "currency": "EUR", "stage": "qualification", "probability": 0.60, "products": ["ING-1.5T", "ING-1.5T"], "createdAt": "2026-01-10T09:00:00Z" }
+      ]
+    },
+    { "accountId": "NL-0849", "name": "Radboud UMC Nijmegen",            "country": "NL", "type": "academic_medical_center", "beds": 800,  "territory": "EMEA-BENELUX", "repId": "R-22", "tier": "key",
+      "installedBase": [
+        { "productId": "EPIQ-ELITE", "serial": "EPI-2020-3344", "installedDate": "2020-09-01", "contractEnd": "2025-09-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "NL-0850", "name": "UMCG Groningen",                  "country": "NL", "type": "academic_medical_center", "beds": 1300, "territory": "EMEA-BENELUX", "repId": "R-23", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-3T", "serial": "INS-2021-8812", "installedDate": "2021-03-01", "contractEnd": "2026-03-01" },
+        { "productId": "SCT-7500", "serial": "SCT-2022-1123", "installedDate": "2022-01-01", "contractEnd": "2027-01-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "NL-0851", "name": "Maastricht UMC+",                 "country": "NL", "type": "academic_medical_center", "beds": 700,  "territory": "EMEA-BENELUX", "repId": "R-23", "tier": "key",
+      "installedBase": [],
+      "opportunities": []
+    },
+
+    { "accountId": "DE-0512", "name": "Charité Universitätsmedizin Berlin", "country": "DE", "type": "university_hospital",     "beds": 3200, "territory": "EMEA-DACH",    "repId": "R-15", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-1.5T", "serial": "INS-2018-3310", "installedDate": "2018-11-01", "contractEnd": "2023-11-01" },
+        { "productId": "ING-3T",   "serial": "INS-2021-6612", "installedDate": "2021-04-01", "contractEnd": "2026-04-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "DE-0513", "name": "Universitätsklinikum Heidelberg", "country": "DE", "type": "university_hospital",     "beds": 1850, "territory": "EMEA-DACH",    "repId": "R-15", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-3T",   "serial": "INS-2020-5544", "installedDate": "2020-05-01", "contractEnd": "2025-05-01" },
+        { "productId": "EPIQ-ELITE","serial": "EPI-2019-7733", "installedDate": "2019-11-01", "contractEnd": "2024-11-01" }
+      ],
+      "opportunities": [
+        { "oppId": "OPP-3004", "title": "3T MRI Replacement + Service", "value": 1900000, "currency": "EUR", "stage": "proposal", "probability": 0.65, "products": ["ING-3T", "SVC-ELITE"], "createdAt": "2025-12-01T09:00:00Z" }
+      ]
+    },
+    { "accountId": "DE-0514", "name": "UKE Hamburg",                     "country": "DE", "type": "university_hospital",     "beds": 1600, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "strategic",
+      "installedBase": [
+        { "productId": "SCT-7500", "serial": "SCT-2021-9901", "installedDate": "2021-07-01", "contractEnd": "2026-07-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "DE-0515", "name": "Universitätsklinikum Freiburg",   "country": "DE", "type": "university_hospital",     "beds": 1200, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "key",
+      "installedBase": [
+        { "productId": "ING-1.5T", "serial": "INS-2017-2211", "installedDate": "2017-08-01", "contractEnd": "2022-08-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "DE-0516", "name": "Klinikum rechts der Isar München","country": "DE", "type": "university_hospital",     "beds": 1100, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "key",
+      "installedBase": [],
+      "opportunities": []
+    },
+
+    { "accountId": "UK-0101", "name": "Manchester University NHS FT",    "country": "UK", "type": "academic_medical_center", "beds": 1700, "territory": "EMEA-UK",      "repId": "R-41", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-1.5T",   "serial": "INS-2019-6612", "installedDate": "2019-05-01", "contractEnd": "2024-05-01" },
+        { "productId": "EPIQ-ELITE", "serial": "EPI-2022-3344", "installedDate": "2022-01-01", "contractEnd": "2027-01-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0102", "name": "Leeds Teaching Hospitals NHS Trust","country":"UK", "type": "academic_medical_center", "beds": 1700, "territory": "EMEA-UK",      "repId": "R-41", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-3T",   "serial": "INS-2020-7723", "installedDate": "2020-11-01", "contractEnd": "2025-11-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0103", "name": "Oxford University Hospitals NHS FT","country":"UK","type": "academic_medical_center", "beds": 1100, "territory": "EMEA-UK",      "repId": "R-42", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-3T",   "serial": "INS-2018-4456", "installedDate": "2018-09-01", "contractEnd": "2023-09-01" },
+        { "productId": "SCT-7500", "serial": "SCT-2021-5577", "installedDate": "2021-10-01", "contractEnd": "2026-10-01" }
+      ],
+      "opportunities": [
+        { "oppId": "OPP-6001", "title": "3T MRI Replacement + RightFit 5yr", "value": 1600000, "currency": "GBP", "stage": "proposal", "probability": 0.50, "products": ["ING-3T", "SVC-ELITE"], "createdAt": "2026-01-05T09:00:00Z" }
+      ]
+    },
+    { "accountId": "UK-0104", "name": "King's College Hospital NHS FT",  "country": "UK", "type": "academic_medical_center", "beds": 1400, "territory": "EMEA-UK",      "repId": "R-42", "tier": "strategic",
+      "installedBase": [
+        { "productId": "AZU-IX", "serial": "AZU-2021-1155", "installedDate": "2021-03-01", "contractEnd": "2026-03-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0105", "name": "UCLH NHS Foundation Trust",       "country": "UK", "type": "academic_medical_center", "beds": 650,  "territory": "EMEA-UK",      "repId": "R-42", "tier": "strategic",
+      "installedBase": [
+        { "productId": "ING-1.5T", "serial": "INS-2020-9988", "installedDate": "2020-06-01", "contractEnd": "2025-06-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0106", "name": "Cambridge University Hospitals NHS FT","country":"UK","type":"academic_medical_center","beds":990,"territory":"EMEA-UK","repId":"R-43","tier":"strategic",
+      "installedBase": [
+        { "productId": "ING-3T",   "serial": "INS-2022-3312", "installedDate": "2022-04-01", "contractEnd": "2027-04-01" }
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0107", "name": "Sheffield Teaching Hospitals NHS FT","country":"UK","type":"academic_medical_center","beds":1500,"territory":"EMEA-UK","repId":"R-43","tier":"key",
+      "installedBase": [
+        { "productId": "EPIQ-ELITE","serial":"EPI-2021-6634","installedDate":"2021-08-01","contractEnd":"2026-08-01"}
+      ],
+      "opportunities": []
+    },
+    { "accountId": "UK-0108", "name": "Bristol NHS Foundation Trust",    "country": "UK", "type": "academic_medical_center", "beds": 800,  "territory": "EMEA-UK",      "repId": "R-43", "tier": "key",
+      "installedBase": [],
+      "opportunities": []
+    },
+    { "accountId": "UK-0109", "name": "Liverpool University Hospitals NHS FT","country":"UK","type":"academic_medical_center","beds":1500,"territory":"EMEA-UK","repId":"R-44","tier":"strategic",
+      "installedBase": [
+        { "productId": "SCT-7500","serial":"SCT-2020-8821","installedDate":"2020-09-01","contractEnd":"2025-09-01"}
+      ],
+      "opportunities": []
+    },
+    { "accountId": "NL-0851", "name": "Maastricht UMC+",                 "country": "NL", "type": "academic_medical_center", "beds": 700,  "territory": "EMEA-BENELUX", "repId": "R-23", "tier": "key",
+      "installedBase": [{"productId":"ING-1.5T","serial":"INS-2020-1122","installedDate":"2020-03-01","contractEnd":"2025-03-01"}],
+      "opportunities": []
+    },
+    { "accountId": "NL-0852", "name": "Utrecht UMC",                      "country": "NL", "type": "academic_medical_center", "beds": 1000, "territory": "EMEA-BENELUX", "repId": "R-23", "tier": "strategic",
+      "installedBase": [{"productId":"ING-3T","serial":"INS-2022-5566","installedDate":"2022-07-01","contractEnd":"2027-07-01"},{"productId":"SCT-7500","serial":"SCT-2021-3344","installedDate":"2021-05-01","contractEnd":"2026-05-01"}],
+      "opportunities": []
+    },
+    { "accountId": "NL-0853", "name": "Haaglanden Medisch Centrum",       "country": "NL", "type": "general_hospital",        "beds": 600,  "territory": "EMEA-BENELUX", "repId": "R-22", "tier": "key",
+      "installedBase": [{"productId":"EPIQ-ELITE","serial":"EPI-2021-9977","installedDate":"2021-02-01","contractEnd":"2026-02-01"}],
+      "opportunities": []
+    },
+    { "accountId": "NL-0854", "name": "St. Antonius Ziekenhuis",          "country": "NL", "type": "general_hospital",        "beds": 800,  "territory": "EMEA-BENELUX", "repId": "R-22", "tier": "key",
+      "installedBase": [],
+      "opportunities": []
+    },
+    { "accountId": "NL-0855", "name": "Jeroen Bosch Ziekenhuis",          "country": "NL", "type": "general_hospital",        "beds": 550,  "territory": "EMEA-BENELUX", "repId": "R-23", "tier": "standard",
+      "installedBase": [{"productId":"ING-1.5T","serial":"INS-2017-8823","installedDate":"2017-09-01","contractEnd":"2022-09-01"}],
+      "opportunities": []
+    },
+
+    { "accountId": "DE-0516", "name": "Klinikum rechts der Isar München", "country": "DE", "type": "university_hospital",     "beds": 1100, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "key",
+      "installedBase": [{"productId":"EPIQ-ELITE","serial":"EPI-2020-5512","installedDate":"2020-04-01","contractEnd":"2025-04-01"}],
+      "opportunities": []
+    },
+    { "accountId": "DE-0517", "name": "Universitätsklinikum Düsseldorf",  "country": "DE", "type": "university_hospital",     "beds": 1350, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "strategic",
+      "installedBase": [{"productId":"ING-3T","serial":"INS-2019-7734","installedDate":"2019-10-01","contractEnd":"2024-10-01"}],
+      "opportunities": []
+    },
+    { "accountId": "DE-0518", "name": "Universitätsklinikum Köln",        "country": "DE", "type": "university_hospital",     "beds": 1250, "territory": "EMEA-DACH",    "repId": "R-15", "tier": "strategic",
+      "installedBase": [{"productId":"AZU-IX","serial":"AZU-2022-3388","installedDate":"2022-06-01","contractEnd":"2027-06-01"}],
+      "opportunities": []
+    },
+    { "accountId": "DE-0519", "name": "Universitätsklinikum Tübingen",    "country": "DE", "type": "university_hospital",     "beds": 1500, "territory": "EMEA-DACH",    "repId": "R-15", "tier": "key",
+      "installedBase": [{"productId":"SCT-7500","serial":"SCT-2021-6677","installedDate":"2021-12-01","contractEnd":"2026-12-01"}],
+      "opportunities": []
+    },
+    { "accountId": "DE-0520", "name": "Städtisches Klinikum München",     "country": "DE", "type": "general_hospital",        "beds": 2000, "territory": "EMEA-DACH",    "repId": "R-16", "tier": "key",
+      "installedBase": [],
+      "opportunities": []
+    },
+
+    { "accountId": "UK-0110", "name": "Nottingham University Hospitals NHS Trust","country":"UK","type":"academic_medical_center","beds":1700,"territory":"EMEA-UK","repId":"R-44","tier":"key",
+      "installedBase": [{"productId":"ING-1.5T","serial":"INS-2021-7744","installedDate":"2021-11-01","contractEnd":"2026-11-01"}],
+      "opportunities": []
+    }
+  ],
+  "contacts": [
+    { "contactId": "C-001", "accountId": "NL-0847", "name": "Prof. F. de Vries",   "role": "Radiology Chief",    "email": "f.devries@erasmusmc.nl",      "sentiment": "positive" },
+    { "contactId": "C-002", "accountId": "NL-0847", "name": "J. Bakker",            "role": "Procurement Manager","email": "j.bakker@erasmusmc.nl",       "sentiment": "neutral"  },
+    { "contactId": "C-003", "accountId": "NL-0848", "name": "Dr. M. van den Berg",  "role": "Radiology Chair",    "email": "m.vandenberg@amsterdamumc.nl","sentiment": "positive" },
+    { "contactId": "C-004", "accountId": "NL-0848", "name": "P. Smit",              "role": "CFO",                "email": "p.smit@amsterdamumc.nl",      "sentiment": "neutral"  },
+    { "contactId": "C-005", "accountId": "DE-0512", "name": "Prof. K. Müller",      "role": "Medical Director",   "email": "k.mueller@charite.de",        "sentiment": "positive" },
+    { "contactId": "C-006", "accountId": "DE-0512", "name": "H. Schmidt",           "role": "Procurement Director","email":"h.schmidt@charite.de",         "sentiment": "neutral"  },
+    { "contactId": "C-007", "accountId": "DE-0513", "name": "Prof. T. Weber",       "role": "Radiology Chief",    "email": "t.weber@med.uni-heidelberg.de","sentiment": "positive" },
+    { "contactId": "C-008", "accountId": "DE-0513", "name": "Dr. A. Fischer",       "role": "CFO",                "email": "a.fischer@med.uni-heidelberg.de","sentiment":"neutral" },
+    { "contactId": "C-009", "accountId": "UK-0103", "name": "Prof. S. Ramachandran","role": "Radiology Director",  "email": "s.ramachandran@ouh.nhs.uk",   "sentiment": "positive" },
+    { "contactId": "C-010", "accountId": "UK-0103", "name": "Dr. E. Hughes",        "role": "CFO",                "email": "e.hughes@ouh.nhs.uk",         "sentiment": "neutral"  },
+    { "contactId": "C-011", "accountId": "UK-0101", "name": "Dr. C. Patel",         "role": "Radiology Chief",    "email": "c.patel@mft.nhs.uk",          "sentiment": "positive" },
+    { "contactId": "C-012", "accountId": "UK-0101", "name": "J. Morrison",          "role": "Procurement Manager","email": "j.morrison@mft.nhs.uk",       "sentiment": "neutral"  }
+  ],
+  "products": [
+    { "productId": "ING-1.5T",   "name": "Ingenia Ambition 1.5T MRI",        "category": "mri",           "listPrice": 850000,  "currency": "EUR", "leadWeeks": 10 },
+    { "productId": "ING-3T",     "name": "Ingenia Elition 3T MRI",            "category": "mri",           "listPrice": 1400000, "currency": "EUR", "leadWeeks": 14 },
+    { "productId": "AZU-IX",     "name": "Azurion Interventional X-Ray",      "category": "interventional","listPrice": 1200000, "currency": "EUR", "leadWeeks": 12 },
+    { "productId": "EPIQ-ELITE", "name": "EPIQ Elite Ultrasound",             "category": "ultrasound",    "listPrice": 180000,  "currency": "EUR", "leadWeeks": 6  },
+    { "productId": "SCT-7500",   "name": "Spectral CT 7500",                  "category": "ct",            "listPrice": 1100000, "currency": "EUR", "leadWeeks": 16 },
+    { "productId": "COIL-NV",    "name": "Neurovascular Coil Package",        "category": "accessories",   "listPrice": 180000,  "currency": "EUR", "leadWeeks": 4  },
+    { "productId": "SVC-ELITE",  "name": "Elite Service Contract (per year)", "category": "service",       "listPrice": 90000,   "currency": "EUR", "leadWeeks": 0  },
+    { "productId": "ING-3T-REF", "name": "Ingenia 3T MRI (Certified Refurb)","category": "mri",           "listPrice": 780000,  "currency": "EUR", "leadWeeks": 4  },
+    { "productId": "CONTRAST-KIT","name":"Contrast Media Kit (50-unit bundle)","category":"consumable",    "listPrice": 4800,    "currency": "EUR", "leadWeeks": 1  },
+    { "productId": "ELEC-PACK",  "name": "ECG Electrode Pack (500-unit)",     "category": "consumable",    "listPrice": 1200,    "currency": "EUR", "leadWeeks": 1  }
+  ],
+  "reps": [
+    { "repId": "R-15", "name": "Lars Hoffmann",     "territory": "EMEA-DACH",    "managerId": "M-02" },
+    { "repId": "R-16", "name": "Anna Becker",       "territory": "EMEA-DACH",    "managerId": "M-02" },
+    { "repId": "R-22", "name": "Sophie van Dijk",   "territory": "EMEA-BENELUX", "managerId": "M-02" },
+    { "repId": "R-23", "name": "Luc Janssen",       "territory": "EMEA-BENELUX", "managerId": "M-02" },
+    { "repId": "R-41", "name": "James Whitfield",   "territory": "EMEA-UK",      "managerId": "M-04" },
+    { "repId": "R-42", "name": "Priya Sharma",      "territory": "EMEA-UK",      "managerId": "M-04" },
+    { "repId": "R-43", "name": "Tom Fletcher",      "territory": "EMEA-UK",      "managerId": "M-04" },
+    { "repId": "R-44", "name": "Sarah O'Brien",     "territory": "EMEA-UK",      "managerId": "M-04" },
+    { "repId": "R-55", "name": "Dirk van Houten",   "territory": "EMEA-BENELUX", "managerId": "M-02" }
+  ]
+}

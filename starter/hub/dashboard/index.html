@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SalesPulse Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/dashboard/styles.css" />
+</head>
+<body>
+
+  <!-- ── Header ───────────────────────────────────────── -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span>SalesPulse Hub</span>
+      </div>
+      <span class="badge-live" id="status-badge"><span class="pulse-dot"></span>LIVE</span>
+    </div>
+
+    <nav class="kpi-bar">
+      <div class="kpi-card">
+        <span class="kpi-label">Total Pipeline</span>
+        <span class="kpi-value" id="val-pipeline">—</span>
+      </div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-card kpi-card--warn">
+        <span class="kpi-label">At-Risk Revenue</span>
+        <span class="kpi-value" id="val-atrisk">—</span>
+      </div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-card">
+        <span class="kpi-label">Coverage Gaps</span>
+        <span class="kpi-value" id="val-gaps">—</span>
+      </div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-card">
+        <span class="kpi-label">Cross-sell Opps</span>
+        <span class="kpi-value" id="val-crosssell">—</span>
+      </div>
+      <div class="kpi-divider"></div>
+      <div class="kpi-card kpi-card--dim">
+        <span class="kpi-label">Actions</span>
+        <span class="kpi-value" id="val-actions">—</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ── Agent strip ──────────────────────────────────── -->
+  <section class="agent-strip" id="agent-strip">
+    <!-- populated by JS -->
+  </section>
+
+  <!-- ── Main layout ──────────────────────────────────── -->
+  <main class="layout">
+
+    <section class="accounts-panel">
+      <div class="section-header">
+        <h2 class="section-title">Accounts</h2>
+        <span class="pill" id="account-count">0</span>
+      </div>
+      <div id="account-grid" class="account-grid">
+        <div class="skeleton-grid">
+          <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <!-- Tab bar -->
+      <div class="tab-bar">
+        <button class="tab-btn tab-btn--active" data-tab="actions" onclick="switchTab('actions',this)">Actions</button>
+        <button class="tab-btn" data-tab="signals" onclick="switchTab('signals',this)">Signals</button>
+        <button class="tab-btn" data-tab="safety" onclick="switchTab('safety',this)">Safety</button>
+      </div>
+
+      <!-- Actions tab -->
+      <div id="tab-actions" class="tab-content tab-content--active sidebar-block sidebar-block--grow">
+        <div class="section-header">
+          <h2 class="section-title">Action Queue</h2>
+          <span class="pill" id="action-count">0</span>
+        </div>
+        <div id="action-list" class="action-list"><p class="empty-state">No actions yet.</p></div>
+      </div>
+
+      <!-- Signals tab -->
+      <div id="tab-signals" class="tab-content sidebar-block sidebar-block--grow">
+        <div class="section-header">
+          <h2 class="section-title">Live Signals</h2>
+          <span class="signal-dot"></span>
+        </div>
+        <ul id="signal-log" class="signal-log"></ul>
+      </div>
+
+      <!-- Safety tab -->
+      <div id="tab-safety" class="tab-content sidebar-block sidebar-block--grow">
+        <div class="section-header">
+          <h2 class="section-title">Safety &amp; Rollout</h2>
+        </div>
+        <div id="safety-panel">
+          <p class="empty-state">Loading…</p>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ── Chat FAB ─────────────────────────────────────── -->
+  <button class="chat-fab" id="chat-fab" onclick="toggleChat()" title="Query agents">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </button>
+
+  <!-- ── Chat panel ───────────────────────────────────── -->
+  <div id="chat-panel" class="chat-panel hidden">
+    <div class="chat-header">
+      <span>Ask the agents</span>
+      <button onclick="toggleChat()">✕</button>
+    </div>
+    <div id="chat-messages" class="chat-messages">
+      <div class="chat-bubble chat-bubble--agent">
+        Ask me anything about the portfolio — at-risk accounts, stalled deals, delivery constraints, cross-sell opportunities, or governance.
+      </div>
+    </div>
+    <div class="chat-quick">
+      <button onclick="askChat('Which accounts are at risk?')">At-risk accounts</button>
+      <button onclick="askChat('Summarise the portfolio.')">Portfolio summary</button>
+      <button onclick="askChat('Any stalled deals?')">Stalled deals</button>
+      <button onclick="askChat('Delivery constraints?')">Delivery</button>
+      <button onclick="askChat('Safety and governance summary.')">Safety</button>
+    </div>
+    <div class="chat-input-row">
+      <input id="chat-input" type="text" placeholder="Ask a question…" onkeydown="if(event.key==='Enter') sendChat()" />
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <!-- ── Action detail modal ──────────────────────────── -->
+  <div id="modal-overlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Action Detail</h3>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+      <div class="modal-footer">
+        <button class="btn btn--approve"  id="modal-approve">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Approve
+        </button>
+        <button class="btn btn--escalate" id="modal-escalate">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>Escalate
+        </button>
+        <button class="btn btn--dismiss"  id="modal-dismiss">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Dismiss
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/dashboard/app.js"></script>
+</body>
+</html>

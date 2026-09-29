@@ -5,3 +5,46 @@ ingestion/hash_store.json
 ingestion/bm25_state.json
 __pycache__/
 *.pyc
+
+# ── Dependencies ────────────────────────────────────────────────
+node_modules/
+.npm/
+.pnpm-store/
+
+# ── Environment & secrets (NEVER commit) ────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ── Build / dist ─────────────────────────────────────────────────
+dist/
+build/
+.next/
+out/
+
+# ── Test artefacts ───────────────────────────────────────────────
+coverage/
+.nyc_output/
+*.lcov
+
+# ── Runtime output (local dev) ───────────────────────────────────
+submission.jsonl
+logs/
+*.log
+
+# ── OS / Editor ──────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Docker ───────────────────────────────────────────────────────
+docker-compose.override.yml
+*.mov
